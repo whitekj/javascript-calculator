@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Kevin White">
+		<title>JavaScript Calculator</title>
+		<link rel="stylesheet" href="calc.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="jexl.min.js"></script>
+		<script src="calc.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div id="title" class="col-12">
+					<h1>JavaScript Calculator</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div id="calculator" class="col-7">
+					<div id="display">
+						<input type="textbox" id="output" readonly="readonly"></input>
+					</div>
+					<br>
+					<div id="buttons" class="container-fluid">
+						<div class="row">
+							<div class="col-3">
+								<input type="button" class="digit" value="1" onclick="put('1', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="digit" value="2" onclick="put('2', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="digit" value="3" onclick="put('3', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="digit" value="4" onclick="put('4', false);">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-3">
+								<input type="button" class="digit" value="5" onclick="put('5', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="digit" value="6" onclick="put('6', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="digit" value="7" onclick="put('7', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="digit" value="8" onclick="put('8', false);">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-3">
+								<input type="button" class="digit" value="9" onclick="put('9', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="digit" value="0" onclick="put('0', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="op" value="." onclick="put('.', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="op" value="+" onclick="put('+', true);">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-3">
+								<input type="button" class="op" value="-" onclick="put('-', true);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="op" value="*" onclick="put('*', true);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="op" value="/" onclick="put('/', true);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="op" value="^" onclick="put('^', true);">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-3">
+								<input type="button" class="op" value="%" onclick="put('%', true);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="op" value="(" onclick="put('(', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="op" value=")" onclick="put(')', false);">
+							</div>
+							<div class="col-3">
+								<input type="button" class="equals" value="=" onclick="calculate();">
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-6">
+								<input type="button" class="del" value="DEL" onclick="del();">
+							</div>
+							<div class="col-6">
+								<input type="button" class="clear" value="CLEAR" onclick="clr();">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="history" class="col-5">
+					<br>
+					<h2>History</h2>
+					<br>
+					<div id="historyDisplay"></div>
+					<br><br>
+					<input type="button" class="clearHistory" value="CLEAR" onclick="clrHistory();">
+				</div>
+			</div>
+		</div>
+	</body>
