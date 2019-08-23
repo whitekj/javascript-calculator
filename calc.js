@@ -60,6 +60,9 @@ function put(char, contin) {
 	reset = false;
 	//Update display
 	out.value = exp;
+	out.focus();
+	out.setSelectionRange(out.value.length,out.value.length);	
+	out.scrollLeft = out.scrollWidth;
 }
 
 function calculate() {
